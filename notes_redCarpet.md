@@ -143,3 +143,9 @@ end
 Would that be possible? Would there be any issues with scope?
 
 I mean, there's only one way really, to learn. 
+
+Ok, so, it's sort of working. But what seems to be the problem? 
+
+Well, the HTML tags are being rendered into the view. And that's not what I want. 
+
+So I still have to do some more research within the documentatino. 
