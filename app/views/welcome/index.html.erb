@@ -6,28 +6,37 @@
 </div>
 
 
-<table class="table table-striped table-inverse table-responsive mx-auto" style="width: 200px;">
+<table class="table table-striped table-inverse table-responsive mx-auto" style="width: 18rem;">
   <thead class="thead-inverse">
     <tr>
-      <th>link</th>
-      <th>link</th>
-      <th>link</th>
+      <th>Website</th>
+      <th>Address</th>
+      <th>Memo</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td scope="row">row</td>
-      <td>link</td>
+      <td scope="row">Meditation</td>
+      <td><%= link_to 'UCLA mindfulness meditation', 'https://www.uclahealth.org/marc/body.cfm?id=107&iirf_redirect=1' %></td>
       <td>link</td>
     </tr>
     <tr>
-      <td scope="row">row</td>
+      <td scope="row">Library</td>
+      <td><%= link_to 'Public Library', 'https://boulder.flatironslibrary.org/MyAccount/CheckedOut' %></td>
       <td>link</td>
+    </tr>
+    <tr>
+      <td scope="row">Webblog</td>
+      <td><%= link_to 'Markdown rendering', 'https://www.mirrorcommunications.com/blog/adding-markdown-syntax-highlighting-to-your-rails-app' %></td>
       <td>link</td>
     </tr>
   </tbody>
 </table>
+
+
 <hr>
+
+<!-- single card -->
 <div class="card mx-auto" style="width: 18rem;">
   <%= image_tag 'https://loremflickr.com/320/240/' %>
   <div class="card-body">
