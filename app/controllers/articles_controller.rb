@@ -1,25 +1,68 @@
+class HTMLWithPants < Redcarpet::Render::HTML
+  include Redcarpet::Render::SmartyPants
+end
+
 class ArticlesController < ApplicationController
+  def index
+    @articles = Article.all
+  end
 
-    def index
-        @articles = Article.all
-    end
+  def show
+    @article = Article.find(params[:id])
 
-    def show
-        @article = Article.find(params[:id])
-    end
+    # renderer = Redcarpet::Render::HTML.new(filter_html: true)
+    renderer = HTMLWithPants.new(filter_html: true)
 
-    def new
-    end
+    extensions = {
+      no_intra_emphasis: true,
+      tables: true,
+      fenced_code_blocks: true,
+      disable_indented_code_blocks: true,
+      autolink: true,
+      strikethrough: true,
+    }
 
-    def create
-        @article = Article.new(article_params)
- 
-        @article.save
-        redirect_to @article
-    end
+    @display_text = Redcarpet::Markdown.new(renderer, extensions)
+  end
 
-    private
-    def article_params
-        params.require(:article).permit(:title, :text)
+  def new
+    @article = Article.new
+  end
+
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def create
+    @article = Article.new(article_params)
+
+    if @article.save
+      redirect_to @article
+    else
+      render 'new'
     end
+  end
+
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      redirect_to @article
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    
+    redirect_to articles_path
+  end
+
+  private
+
+  def article_params
+    params.require(:article).permit(:title, :text)
+  end
 end

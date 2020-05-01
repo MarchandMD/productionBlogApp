@@ -5,5 +5,5 @@
  
 <p>
   <strong>Text:</strong>
-  <%= @article.text %>
+  <%= @display_text.render(@article.text).html_safe %>
 </p>
