@@ -25,6 +25,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'redcarpet', '3.5'
 # syntax Highlighting with CodeRay
 gem 'coderay', '~> 1.1', '>= 1.1.2'
+# adding Bootstrap
+gem 'bootstrap', '~> 4.4.1'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

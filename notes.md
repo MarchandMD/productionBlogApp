@@ -236,3 +236,68 @@ And just building the list of hyperlinks isn't really taht difficult.
 
 Just try the oAuth thing. Make a branch. 
 
+# Rails Routing from the Outside in
+
+So, doing this will teach me about routing, and about resources. But I don't understand resources enough, and how to use them, or how to get them and how to incorporate them in an applicaiton. 
+
+I think resources are sort of the thing that makes the application tick. Like, the subject of a webApp. More or less. 
+
+I think I want to research a little more about what resources are and how to accumulate them in Rails. 
+
+Perhaps what would help would be adding another resource. 
+
+And what I want to do is mimic what I've already done for the blog, bbut fur a project that I'm interested in. 
+
+So what I want to do is I want to add is a model for ice_times, and then a form that allows me to add ice times. 
+
+This way I can get practice with keeping track of individual ice times and populating a model on my own. This will then lead me to finding ways to populate or "seed" a database with other information, perhaps through JSON. I mean, there is a lot to learn. So a little at a time. I do need practice building forms, so go ahead and do that. 
+
+I think the first place to start is back in the "getting started with rails" guide, and using it as a guide, but improvising with what I want to do. 
+
+## Getting Up and Running
+So this is where the "resource" is first added, and so it's where I want to start. I'm thinking about what to call the resource, so I konw there is some "intelligence" regarding the naming of resources, so I want to make it generic enough to make it easy for rails to do it's "magic"...maybe just "sessions"
+
+>...I will now create a new resource. A resource is the term used for a collection of similar objects, such as articles, people, or animals.
+
+Or, in my case, ice times or drop-in sessions. 
+
+>I can create, read, update and destroy items for a resource and these operations are referred to as CRUD operations. 
+
+1. Create
+2. Read
+3. Update
+4. Destroy
+
+Now there are seven routes that are needed, and that's because of the different type of HTTP requests that can be made. 
+
+For now though, I'm going to actually create the `resource`. 
+
+>Rails provides a `#resources` method which can be used to declare a standard REST resource. ....add the 'sessions resource' to `config/routes.rb`
+
+Ok, so I added the `resources :sessions` code tot he `config/routes.rb`...the second step is to create a controller. I can do that from the command line by running: 
+
+```
+rails generate controller Sessions
+```
+
+This is using the `rails generate` command to create a `controller` and I name it the same thing as I did the actual resource: `Sessions`
+
+This `rails generate controller Sessions` created a controller, and a stylesheet, as well as a view directory for me. 
+
+The next thing that's done is: creating the `#new` action (method) inside the `sessions_controller.rb`. 
+
+```ruby
+
+class SessionsController < ApplicationController
+  def new
+  end
+end
+```
+
+NOw I have the first action/method...but I don't know which of the 4 CRUD operations and RESTful routes this one would use. 
+
+I'd imagine it's for creating...but I do know that there's also a `#create` method that is built. These are good questions to have. 
+
+So, the first thing I'll do is simply create the "view template" for this action/method, so that I'm able to see a page throughy this controller. 
+
+and that view needes a form...I do want to build this one with bootstrap, so I'll go through the process of adding that gem. 
