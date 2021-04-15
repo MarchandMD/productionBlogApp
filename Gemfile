@@ -4,9 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.5'
 
 
-
 gem "activerecord", ">= 6.0.3.5"
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 # Use postgresql as the database for Active Record
@@ -37,8 +35,6 @@ gem 'bootstrap', '~> 4.4.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-# adding bootstrap
-gem 'bootstrap', '~> 4.4.1'
 # adding jquery-rails
 gem 'jquery-rails'
 
