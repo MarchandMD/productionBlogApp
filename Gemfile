@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 #Let's parse and render some Markdown
-gem 'redcarpet', '3.5'
+gem 'redcarpet', '3.5.1'
 # syntax Highlighting with CodeRay
 gem 'coderay', '~> 1.1', '>= 1.1.2'
 # adding Bootstrap
